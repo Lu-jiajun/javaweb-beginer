@@ -16,5 +16,6 @@ public class TestController {
         System.out.println("请求头，网关加的:"+day);
         System.out.println("api-passenger:"+port);
         return "test api passenger"+port;
+
     }
 }
