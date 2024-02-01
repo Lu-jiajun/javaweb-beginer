@@ -46,4 +46,37 @@
 
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2021.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2020.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+<!--    scope元素指定依赖项的范围，它可以是以下值之一：-->
+
+<!--    compile：这是默认值，表示该依赖项将被编译到项目中。-->
+<!--    test：表示该依赖项仅用于测试目的，不会被编译到项目中。-->
+<!--    runtime：表示该依赖项仅在运行时需要，不会被编译到项目中。-->
+<!--    provided：表示该依赖项由容器或其他机制提供，不需要在项目中包含。-->
+<!--    import：表示该依赖项是一个聚合依赖项，它包含了一组其他依赖项，这些依赖项将被导入到项目中。-->
+<!--
+<dependencyManagement>元素用于管理项目的依赖关系，它允许你在一个地方声明所有依赖项及其版本，然后在项目的其他地方引用这些依赖项。这可以帮助确保项目中的所有模块都使用相同的依赖项版本，从而避免版本冲突。
+
+<dependencyManagement>元素通常放在项目的根 pom.xml 文件中，它包含一个 <dependencies>元素，其中列出了所有要管理的依赖项。每个依赖项都包含 <groupId>, <artifactId>, <version> 和 <scope> 元素，其中 <version> 元素是必填的。-->
+
 </project>
