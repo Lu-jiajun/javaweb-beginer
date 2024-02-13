@@ -1,2 +1,8 @@
-package fun.lujiajun.dto;public class TokenResponse {
+package fun.lujiajun.dto;
+
+import lombok.Data;
+
+@Data
+public class TokenResponse {
+    private  String token;
 }
