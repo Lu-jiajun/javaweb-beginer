@@ -1,9 +1,12 @@
 package fun.lujiajun.apipassenger.service;
 
+import fun.lujiajun.constant.CommonStatusEnum;
 import fun.lujiajun.dto.ResponseResult;
 import fun.lujiajun.dto.TokenResponse;
 import fun.lujiajun.response.NumberCodeResponse;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
+import org.aspectj.bridge.ICommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -39,7 +42,7 @@ public class VerificationCodeService {
         return  ResponseResult.success();
     }
     private  String generatorKeyByPhone(String passengerPhone){
-        return "null";
+        return verificationCodePrefix + passengerPhone;
     }
 
     public ResponseResult checkCode(String passengerPhone,String verificationCode){
@@ -47,8 +50,15 @@ public class VerificationCodeService {
 
 //        generate key
         String key = generatorKeyByPhone(passengerPhone);
-
-        System.out.println("check  verification code ");
+        String codeRedis = stringRedisTemplate.opsForValue().get(key);
+        // get verification code from redis
+        System.out.println("check  verification code in redis: "+ codeRedis);
+        if(StringUtils.isBlank(codeRedis)){
+            return ResponseResult.fail(CommonStatusEnum.VERIFICATION_CODE_ERROR.getCode(),CommonStatusEnum.VERIFICATION_CODE_ERROR.getValue());
+        }
+        if(!verificationCode.trim().equals(codeRedis.trim())){
+            return ResponseResult.fail(CommonStatusEnum.VERIFICATION_CODE_ERROR.getCode(),CommonStatusEnum.VERIFICATION_CODE_ERROR.getValue());
+        }
         System.out.println("check if the user is exist");
         System.out.println("generate ande response the token");
         TokenResponse tokenResponse = new TokenResponse();
