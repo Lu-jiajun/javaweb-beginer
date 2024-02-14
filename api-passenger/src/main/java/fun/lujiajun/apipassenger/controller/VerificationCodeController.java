@@ -1,8 +1,8 @@
 package fun.lujiajun.apipassenger.controller;
 
-import fun.lujiajun.request.VerificationCodeDTO;
+import fun.lujiajun.internalcommon.request.VerificationCodeDTO;
 import fun.lujiajun.apipassenger.service.VerificationCodeService;
-import fun.lujiajun.dto.ResponseResult;
+import fun.lujiajun.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

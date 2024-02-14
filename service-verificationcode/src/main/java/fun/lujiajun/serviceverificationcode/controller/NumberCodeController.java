@@ -1,7 +1,7 @@
 package fun.lujiajun.serviceverificationcode.controller;
 
-import fun.lujiajun.dto.ResponseResult;
-import fun.lujiajun.response.NumberCodeResponse;
+import fun.lujiajun.internalcommon.dto.ResponseResult;
+import fun.lujiajun.internalcommon.response.NumberCodeResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

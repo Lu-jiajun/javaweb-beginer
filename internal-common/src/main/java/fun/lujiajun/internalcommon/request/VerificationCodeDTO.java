@@ -1,4 +1,4 @@
-package fun.lujiajun.request;
+package fun.lujiajun.internalcommon.request;
 
 import lombok.Data;
 

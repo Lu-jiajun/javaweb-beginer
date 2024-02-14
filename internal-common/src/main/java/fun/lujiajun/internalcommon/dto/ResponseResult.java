@@ -1,5 +1,5 @@
-package fun.lujiajun.dto;
-import fun.lujiajun.constant.CommonStatusEnum;
+package fun.lujiajun.internalcommon.dto;
+import fun.lujiajun.internalcommon.constant.CommonStatusEnum;
 import  lombok.Data;
 import lombok.experimental.Accessors;
 

@@ -1,7 +1,7 @@
 package fun.lujiajun.servicepassengeruser.controller;
 
-import fun.lujiajun.dto.ResponseResult;
-import fun.lujiajun.request.VerificationCodeDTO;
+import fun.lujiajun.internalcommon.dto.ResponseResult;
+import fun.lujiajun.internalcommon.request.VerificationCodeDTO;
 //import fun.lujiajun.servicepassengeruser.remote.ServicePassengerUserClient;
 import fun.lujiajun.servicepassengeruser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

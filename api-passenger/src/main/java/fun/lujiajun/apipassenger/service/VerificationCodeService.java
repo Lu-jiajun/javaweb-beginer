@@ -1,10 +1,10 @@
 package fun.lujiajun.apipassenger.service;
 
-import fun.lujiajun.constant.CommonStatusEnum;
-import fun.lujiajun.dto.ResponseResult;
-import fun.lujiajun.dto.TokenResponse;
-import fun.lujiajun.request.VerificationCodeDTO;
-import fun.lujiajun.response.NumberCodeResponse;
+import fun.lujiajun.internalcommon.constant.CommonStatusEnum;
+import fun.lujiajun.internalcommon.dto.ResponseResult;
+import fun.lujiajun.internalcommon.dto.TokenResponse;
+import fun.lujiajun.internalcommon.request.VerificationCodeDTO;
+import fun.lujiajun.internalcommon.response.NumberCodeResponse;
 import fun.lujiajun.apipassenger.remote.ServicePassengerUserClient;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

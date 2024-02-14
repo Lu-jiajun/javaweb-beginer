@@ -1,7 +1,7 @@
 package fun.lujiajun.apipassenger.remote;
 
-import fun.lujiajun.dto.ResponseResult;
-import fun.lujiajun.response.NumberCodeResponse;
+import fun.lujiajun.internalcommon.dto.ResponseResult;
+import fun.lujiajun.internalcommon.response.NumberCodeResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

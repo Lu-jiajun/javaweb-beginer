@@ -1,4 +1,4 @@
-package fun.lujiajun.constant;
+package fun.lujiajun.internalcommon.constant;
 
 import lombok.Data;
 import lombok.Getter;
