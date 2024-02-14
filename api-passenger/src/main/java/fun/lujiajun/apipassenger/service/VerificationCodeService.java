@@ -3,10 +3,10 @@ package fun.lujiajun.apipassenger.service;
 import fun.lujiajun.constant.CommonStatusEnum;
 import fun.lujiajun.dto.ResponseResult;
 import fun.lujiajun.dto.TokenResponse;
+import fun.lujiajun.request.VerificationCodeDTO;
 import fun.lujiajun.response.NumberCodeResponse;
-import net.sf.json.JSONObject;
+import fun.lujiajun.apipassenger.remote.ServicePassengerUserClient;
 import org.apache.commons.lang.StringUtils;
-import org.aspectj.bridge.ICommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -25,6 +25,9 @@ public class VerificationCodeService {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private ServicePassengerUserClient servicePassengerUserClient;
 
     public ResponseResult generatorCode(String passengerPhone) {
         System.out.println("输入手机号码,调用验证码发送服务");
@@ -60,6 +63,10 @@ public class VerificationCodeService {
             return ResponseResult.fail(CommonStatusEnum.VERIFICATION_CODE_ERROR.getCode(),CommonStatusEnum.VERIFICATION_CODE_ERROR.getValue());
         }
         System.out.println("check if the user is exist");
+        VerificationCodeDTO verificationCodeDTO = new VerificationCodeDTO();
+        verificationCodeDTO.setPassengerPhone(passengerPhone);
+        servicePassengerUserClient.loginOrRegister(verificationCodeDTO);
+
         System.out.println("generate ande response the token");
         TokenResponse tokenResponse = new TokenResponse();
         tokenResponse.setToken("token value");
