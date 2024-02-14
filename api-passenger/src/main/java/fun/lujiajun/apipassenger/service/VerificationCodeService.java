@@ -1,11 +1,13 @@
 package fun.lujiajun.apipassenger.service;
 
 import fun.lujiajun.internalcommon.constant.CommonStatusEnum;
+import fun.lujiajun.internalcommon.constant.IdentityConstant;
 import fun.lujiajun.internalcommon.dto.ResponseResult;
-import fun.lujiajun.internalcommon.dto.TokenResponse;
+import fun.lujiajun.internalcommon.response.TokenResponse;
 import fun.lujiajun.internalcommon.request.VerificationCodeDTO;
 import fun.lujiajun.internalcommon.response.NumberCodeResponse;
 import fun.lujiajun.apipassenger.remote.ServicePassengerUserClient;
+import fun.lujiajun.internalcommon.util.JwtUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -69,7 +71,7 @@ public class VerificationCodeService {
 
         System.out.println("generate ande response the token");
         TokenResponse tokenResponse = new TokenResponse();
-        tokenResponse.setToken("token value");
-        return  ResponseResult.success(tokenResponse);
+        tokenResponse.setToken(JwtUtils.generatorToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY));
+        return  ResponseResult.success(tokenResponse.getToken());
     }
 }

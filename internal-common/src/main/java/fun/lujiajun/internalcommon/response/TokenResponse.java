@@ -1,4 +1,4 @@
-package fun.lujiajun.internalcommon.dto;
+package fun.lujiajun.internalcommon.response;
 
 import lombok.Data;
 

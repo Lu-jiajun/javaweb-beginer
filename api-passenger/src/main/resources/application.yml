@@ -8,9 +8,11 @@ spring:
   application:
     name: api-passenger
   redis:
+#    host: 192.144.205.93
     host: 127.0.0.1
     port: 6379
     database: 0
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.144.205.93:3306/service-passenger-user?characterEncoding=utf-8&serverTimezone=GMT%2B8

@@ -1,6 +1,7 @@
 package fun.lujiajun.apipassenger.controller;
 
 
+import fun.lujiajun.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,5 +18,14 @@ public class TestController {
         System.out.println("api-passenger:"+port);
         return "test api passenger"+port;
 
+    }
+
+    @GetMapping("/authTest")
+    public  ResponseResult authTest(){
+        return ResponseResult.success("auth test");
+    }
+    @GetMapping("/noauthTest")
+    public  ResponseResult noauthTest(){
+        return  ResponseResult.success("no auth test");
     }
 }
