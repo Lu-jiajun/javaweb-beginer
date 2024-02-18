@@ -1,7 +1,7 @@
 package fun.lujiajun.servicepassengeruser.service;
 
 import fun.lujiajun.internalcommon.dto.ResponseResult;
-import fun.lujiajun.servicepassengeruser.dto.PassengerUser;
+import fun.lujiajun.internalcommon.dto.PassengerUser;
 import fun.lujiajun.servicepassengeruser.mapper.PassengerUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

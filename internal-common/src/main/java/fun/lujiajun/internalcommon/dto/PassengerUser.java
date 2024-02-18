@@ -1,4 +1,4 @@
-package fun.lujiajun.servicepassengeruser.dto;
+package fun.lujiajun.internalcommon.dto;
 
 import lombok.Data;
 
@@ -14,6 +14,7 @@ public class PassengerUser {
     private  String passengerName;
     private  byte passengerGender;
     private  byte state;
+    private String profilePhoto;
 
 //    public boolean getPassengerPhone() {
 //    }
